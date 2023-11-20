@@ -26,3 +26,7 @@ volumes:
 # docker compose ps
 # docker logs spring-boot-3-introduction-postgres
 # docker logs spring-boot-3-introduction-postgres -f
+
+# docker exec -it spring-boot-3-introduction-postgres bash
+# psql -U user
+# CREATE DATABASE customer;
