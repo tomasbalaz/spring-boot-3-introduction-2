@@ -1,0 +1,28 @@
+services:
+  db:
+    container_name: spring-boot-3-introduction-postgres
+    image: postgres:16-alpine
+    environment:
+      POSTGRES_USER: user
+      POSTGRES_PASSWORD: password
+      PGDATA: /data/postgres
+    volumes:
+      - db:/data/postgres
+    ports:
+      - "5432:5432"
+    networks:
+      - db
+    restart: unless-stopped
+
+networks:
+  db:
+    driver: bridge
+
+volumes:
+  db:
+
+# docker compose up
+# docker compose up -d
+# docker compose ps
+# docker logs spring-boot-3-introduction-postgres
+# docker logs spring-boot-3-introduction-postgres -f
