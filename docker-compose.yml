@@ -30,3 +30,7 @@ volumes:
 # docker exec -it spring-boot-3-introduction-postgres bash
 # psql -U user
 # CREATE DATABASE customer;
+# \c customer
+# \dt
+# \d
+# SELECT * FROM customer;
