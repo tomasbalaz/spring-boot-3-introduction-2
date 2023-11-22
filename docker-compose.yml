@@ -34,3 +34,4 @@ volumes:
 # \dt
 # \d
 # SELECT * FROM customer;
+# INSERT INTO customer(id, name, email, age) VALUES(nextval('customer_id_sequence'), 'Alex', 'alex@gmail.com', 22);
