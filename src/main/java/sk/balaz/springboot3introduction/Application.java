@@ -38,4 +38,16 @@ public class Application {
 	public void deleteCustomer(@PathVariable("customerId") Integer id) {
 		customerRepository.deleteById(id);
 	}
+
+	@PutMapping("{customerId}")
+	public void updateCustomer(@PathVariable("customerId") Integer id,
+							   @RequestBody CustomerRequest request) {
+		customerRepository.findById(id)
+				.ifPresent(customer -> {
+					customer.setName(request.name());
+					customer.setEmail(request.email());
+					customer.setAge(request.age());
+					customerRepository.save(customer);
+				});
+	}
 }
